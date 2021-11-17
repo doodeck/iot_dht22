@@ -1,0 +1,28 @@
+{
+  "name": "iot_dht22",
+  "version": "0.0.1",
+  "description": "backend for esp32_dht22 project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doodeck/iot_dht22.git"
+  },
+  "keywords": [
+    "IoT",
+    "node.js",
+    "ESP32"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doodeck/iot_dht22/issues"
+  },
+  "homepage": "https://github.com/doodeck/iot_dht22#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
