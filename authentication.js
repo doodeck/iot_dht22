@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
     if (typeof found !== 'undefined' && found.length > 0) {
         next()
     } else {
-        console.error('Unauthorized id:', req.id)
+        console.error('Unauthorized id:', req.query.id)
         res.sendStatus(401)
     }
 }
