@@ -2,9 +2,15 @@
 
 const express = require('express')
 const auth = require('./authentication.js')
+const db = require('./db.js')
 
 const app = express()
 const PORT = process.env.PORT || 5000;
+
+// code running WITHOUT authentication!!!
+app.get('/db', function (req, res) {
+    db.test(req, res)
+})
 
 // auth
 app.use(auth)
