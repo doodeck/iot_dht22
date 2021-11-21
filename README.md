@@ -7,6 +7,7 @@ backend for esp32_dht22 project
 sudo snap install heroku --classic
 heroku login --browser=chromium
 heroku apps:create --region eu iot-dht22
+AUTH_IDS="************,************" # where you put real ids/MAC addresses like 12ab34cd56ef
 git push heroku main
 heroku logs --tail
 ```
