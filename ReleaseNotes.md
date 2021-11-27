@@ -1,0 +1,4 @@
+- 0.0.1
+  - first deployed release
+- 0.0.2
+  - normalized DB moving ids (MAC addresses) to a separate table
