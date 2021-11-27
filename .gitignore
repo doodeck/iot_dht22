@@ -107,3 +107,6 @@ dist
 credentials.*
 
 .vscode/
+
+# rubbish etc
+tmp/

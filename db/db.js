@@ -9,7 +9,8 @@ const pool = new Pool({
 });
 
 function insert(req, res) {
-  const sqlquery = 'INSERT INTO measurements(id, gpio, temp, hum) VALUES($1, $2, $3, $4)'
+  // 0.0.1: const sqlquery = 'INSERT INTO measurements(id, gpio, temp, hum) VALUES($1, $2, $3, $4)'
+  /* 0.0.2 */ const sqlquery = 'INSERT INTO measurements_n(id_key, gpio, temp, hum) VALUES((SELECT key FROM credentials_ids WHERE id = $1), $2, $3, $4)'
   const values = [req.query.id, req.query.in, req.query.temp, req.query.hum]
   // var self = this
 
