@@ -10,8 +10,10 @@ const pool = new Pool({
 });
 
 function insert(req, res) {
-  // 0.0.1: const sqlquery = 'INSERT INTO measurements(id, gpio, temp, hum) VALUES($1, $2, $3, $4)'
-  /* 0.0.2 */ const sqlquery = 'INSERT INTO measurements(id_key, gpio, temp, hum) VALUES((SELECT key FROM credentials_ids WHERE id = $1), $2, $3, $4)'
+  // 0.0.2  const sqlquery = 'INSERT INTO measurements(id_key, gpio, temp, hum) VALUES((SELECT key FROM credentials_ids WHERE id = $1), $2, $3, $4)'
+  /* 0.0.4 */ const sqlquery = 'INSERT INTO measurements (id_key, gpio, temp, hum, weather_key) ' +
+                                      'VALUES((SELECT key FROM credentials_ids WHERE id = $1), $2, $3, $4, ' +
+                                      '(SELECT key FROM weather w1 INNER JOIN (SELECT MAX(ts) tsm FROM weather) w2 ON w1.ts = w2.tsm GROUP BY key))'
   const values = [req.query.id, req.query.in, req.query.temp, req.query.hum]
 
   pool.connect((err, client, done) => {

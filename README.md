@@ -8,6 +8,7 @@ sudo snap install heroku --classic
 heroku login --browser=chromium
 heroku apps:create --region eu iot-dht22
 heroku config:set AUTH_IDS="************,************" # where you put real ids/MAC addresses like 12ab34cd56ef
+heroku config:set OPENWEATHER_KEY="**********************************" # subscribe at https://openweathermap.org/api
 git push heroku main
 heroku logs --tail
 ```

@@ -9,8 +9,8 @@ CREATE TABLE measurements ( -- internal temperature and humidity
     /* 0.0.2 */ id_key INTEGER REFERENCES credentials_ids(key),
     gpio smallint, -- gpio input id
     temp real, -- temperature
-    hum real -- humidity
-    -- /* 0.0.3 */ weather_key INTEGER REFERENCES weather(key) DEFAULT 0
+    hum real, -- humidity
+    /* 0.0.4 */ weather_key INTEGER REFERENCES weather(key) DEFAULT 0
 );
 
 CREATE TABLE weather ( -- external weather
