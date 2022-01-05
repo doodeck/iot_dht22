@@ -3,7 +3,7 @@
 const { config } = require('../lib/config')
 const { Pool } = require('pg');
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.SUPA_DATABASE_URL, // DATABASE_URL
   ssl: {
     rejectUnauthorized: false
   }
@@ -85,7 +85,7 @@ async function db_test(req, res) {
       const result = await client.query('SELECT * FROM test_table');
       const results = { 'results': (result) ? result.rows : null};
       console.log(JSON.stringify(results))
-      res.json(200, results );
+      res.status(200).json(results );
       client.release();
     } catch (err) {
       console.error(err);
